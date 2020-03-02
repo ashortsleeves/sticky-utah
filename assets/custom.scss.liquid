@@ -25,6 +25,9 @@ $width_desktop:         1200px;
 //===========================
 //========= Styles ==========
 //===========================
+.tab-section {
+  padding: 0;
+}
 
 .collection-tabs {
   ul.sl-tab-list {
@@ -38,11 +41,12 @@ $width_desktop:         1200px;
         display: block;
         color: #fff;
         position: relative;
-        padding: 5px 10px;
+        padding: 7px 10px;
         font-weight: 600;
         text-transform: uppercase;
         transition: 0.3s;
         z-index: 999;
+        margin-bottom: 3px;
 
         &::before {
           content: " ";
@@ -53,10 +57,14 @@ $width_desktop:         1200px;
           top: 0;
           bottom: 0;
           background-color: $color-primary;
-          z-index: -1;
+          z-index: -2;
           transform: skewX(-15deg);
           border-left: solid 3px #fff;
           transition: 0.3s;
+        }
+
+        @include phablet {
+          margin-bottom: 0;
         }
 
         @include tablet {
@@ -74,10 +82,32 @@ $width_desktop:         1200px;
           }
         }
       }
-      //
+
+
+      &:nth-of-type(odd) {
+        a {
+          &::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            width: 20px;
+            left: -6px;
+            top: 0;
+            bottom: 0;
+            background-color: $color-primary;
+            z-index: -1;
+
+            @include phablet {
+              display: none;
+            }
+          }
+        }
+      }
+
       &.sl-tab-all {
         a {
-          &::before {
+          &::before,
+          &::after {
             background-color: $color-secondary;
             border-left: transparent;
           }
@@ -90,6 +120,24 @@ $width_desktop:         1200px;
           }
         }
       }
+    }
+  }
+}
+
+#shopify-section-hero {
+  padding-bottom:15px;
+
+
+  .hero--medium {
+    background-position: 90% 100%!important;
+    height: 200px;
+  }
+
+  @include tablet {
+    padding-bottom: 90px;
+
+    .hero--medium {
+      height: 450px;
     }
   }
 }
