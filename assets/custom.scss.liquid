@@ -1,0 +1,95 @@
+//===========================
+//======== Variables ========
+//===========================
+
+$color-primary:   #59367b;
+$color-secondary: #80c342;
+
+//Breakpoint variables
+$width_mobile:          480px;
+$width_phablet:         576px;
+$width_tablet:          768px;
+$width_laptop:          992px;
+$width_desktop:         1200px;
+
+@mixin mobile { @media (min-width: #{$width_mobile}) { @content; } }
+
+@mixin phablet { @media (min-width: #{$width_phablet}) { @content; } }
+
+@mixin tablet { @media (min-width: #{$width_tablet}) { @content; } }
+
+@mixin laptop { @media (min-width: #{$width_laptop}) { @content; } }
+
+@mixin desktop { @media (min-width: #{$width_desktop}) { @content; } }
+
+//===========================
+//========= Styles ==========
+//===========================
+
+.collection-tabs {
+  ul.sl-tab-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+// TODO: finish styling collection tabs for mobile
+    li.sl-tab-single {
+      a {
+        font-size: 16px;
+        display: block;
+        color: #fff;
+        position: relative;
+        padding: 5px 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: 0.3s;
+        z-index: 999;
+
+        &::before {
+          content: " ";
+          display: block;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          background-color: $color-primary;
+          z-index: -1;
+          transform: skewX(-15deg);
+          border-left: solid 3px #fff;
+          transition: 0.3s;
+        }
+
+        @include tablet {
+          padding: 15px;
+        }
+
+        @include desktop {
+          padding: 15px 25px;
+        }
+
+        &:hover,
+        &:focus {
+          &::before {
+            background-color: lighten($color-primary, 10%);
+          }
+        }
+      }
+      //
+      &.sl-tab-all {
+        a {
+          &::before {
+            background-color: $color-secondary;
+            border-left: transparent;
+          }
+
+          &:hover,
+          &:focus {
+            &::before {
+              background-color: lighten($color-secondary, 10%);
+            }
+          }
+        }
+      }
+    }
+  }
+}
