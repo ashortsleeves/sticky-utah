@@ -34,10 +34,15 @@ $width_desktop:         1200px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-// TODO: finish styling collection tabs for mobile
+
     li.sl-tab-single {
+      width: 50%;
+
+      @include phablet {
+        width: auto;
+      }
+
       a {
-        font-size: 16px;
         display: block;
         color: #fff;
         position: relative;
@@ -65,10 +70,12 @@ $width_desktop:         1200px;
 
         @include phablet {
           margin-bottom: 0;
+          font-size: 15px;
         }
 
         @include tablet {
           padding: 15px;
+          font-size: 16px;
         }
 
         @include desktop {
