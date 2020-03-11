@@ -25,6 +25,98 @@ $width_desktop:         1200px;
 //===========================
 //========= Styles ==========
 //===========================
+header.custom-header {
+  z-index: 999;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  .header-flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+
+
+    nav.custom-nav {
+      display: none;
+
+      @include tablet {
+        display: block;
+      }
+    }
+
+    @include laptop {
+      height: 100px;
+    }
+
+    h1 {
+      margin-bottom: 0;
+      line-height: 0rem;
+
+      span {
+        display: none;
+
+        @include tablet {
+          display: inline;
+        }
+      }
+    }
+
+    .site-nav {
+      margin: 0;
+    }
+
+    a.site-header__logo-link {
+      text-transform: uppercase;
+      font-size: 24px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    h1,
+    .nav-wrap {
+      width: calc(50% - 61px);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: flex-end;
+
+      .button-wrap {
+        display: flex;
+      }
+    }
+
+    .img-wrap {
+      width: 120px;
+      height: 70px;
+      position: relative;
+      background-color: red;
+
+      img {
+        position: absolute;
+        max-width: none;
+        height: auto;
+        width: 100px;
+
+        @include tablet {
+          width: 130px;
+          left: -30px;
+        }
+
+        @include laptop {
+          width: 170px;
+          left: -36px;
+        }
+      }
+
+    }
+  }
+}
+
 .tab-section {
   padding: 0;
 }
@@ -34,6 +126,10 @@ $width_desktop:         1200px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+
+    @include phablet {
+      border-bottom: solid 1px #e4e4e4;
+    }
 
     li.sl-tab-single {
       width: 50%;
