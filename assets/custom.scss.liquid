@@ -1,6 +1,6 @@
-//===========================
-//======== Variables ========
-//===========================
+//===============================================
+//================== Variables ==================
+//===============================================
 
 $color-primary:   #59367b;
 $color-secondary: #80c342;
@@ -22,9 +22,19 @@ $width_desktop:         1200px;
 
 @mixin desktop { @media (min-width: #{$width_desktop}) { @content; } }
 
-//===========================
-//========= Styles ==========
-//===========================
+
+//===============================================
+//=================== Header ====================
+//===============================================
+#SearchDrawer {
+  z-index: 999999;
+}
+
+.js-menu--is-open {
+  display: block;
+  transform: translateY(calc(0% + 50px));
+}
+
 header.custom-header {
   z-index: 999;
   position: relative;
@@ -38,6 +48,7 @@ header.custom-header {
     width: 100%;
     max-width: 1200px;
     padding: 0 15px;
+    z-index: 999;
 
 
     nav.custom-nav {
@@ -55,11 +66,22 @@ header.custom-header {
     h1 {
       margin-bottom: 0;
       line-height: 0rem;
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
 
       span {
         display: none;
 
         @include tablet {
+          &:nth-of-type(2) {
+            display: inline;
+          }
+        }
+
+        @include laptop {
           display: inline;
         }
       }
@@ -78,29 +100,87 @@ header.custom-header {
 
     h1,
     .nav-wrap {
+      width: calc(50% - 44px);
+
+      @include laptop {
       width: calc(50% - 61px);
+      }
     }
 
     .nav-wrap {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
+
+      li,
+      button.site-nav__link span {
+        font-size: 14px;
+
+        @include laptop {
+          font-size: 16px;
+        }
+      }
 
       .button-wrap {
         display: flex;
+        position: relative;
+
+        button.site-header__menu {
+          display: inline-block;
+
+          @include tablet {
+            display: none;
+          }
+        }
+
+        i.fa-close {
+          width: auto;
+          height: auto;
+          position: absolute;
+          top: calc(100% + 15px);
+        }
+      }
+
+      button.site-nav__link {
+        svg {
+          display: none;
+        }
+
+        &::after {
+          content: "\f103";
+          position: relative;
+          display: inline;
+          font-family: FontAwesome;
+        }
       }
     }
 
     .img-wrap {
-      width: 120px;
-      height: 70px;
+      width: 68px;
+      height: 50px;
+      z-index: 999;
       position: relative;
-      background-color: red;
+
+      @include tablet {
+        width: 88px;
+        height: 70px;
+      }
+
+      @include laptop {
+        width: 120px;
+      }
 
       img {
         position: absolute;
         max-width: none;
         height: auto;
         width: 100px;
+        left: -12px;
+        top: 2px;
+
+        @include mobile {
+          left: -23px;
+        }
 
         @include tablet {
           width: 130px;
@@ -110,12 +190,17 @@ header.custom-header {
         @include laptop {
           width: 170px;
           left: -36px;
+          top: inherit;
         }
       }
-
     }
   }
 }
+
+
+//===============================================
+//=================== Styles ====================
+//===============================================
 
 .tab-section {
   padding: 0;
