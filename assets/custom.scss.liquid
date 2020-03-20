@@ -345,3 +345,114 @@ header.custom-header {
     }
   }
 }
+
+.sl-container {
+  max-width: 1200px;
+  width: 100%;
+}
+
+#shopify-section-featured-collections {
+  padding-bottom: 30px;
+
+  @include laptop {
+    padding-bottom: 60px;
+  }
+}
+
+//===============================================
+//=================== Footer ====================
+//===============================================
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-primary;
+  color: #fff;
+  padding: 15px;
+
+  @include tablet {
+    padding: 60px 15px;
+  }
+
+  .sl-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    .sl-column {
+      width: 100%;
+      margin-bottom: 15px;
+
+      .bold {
+        color: #fff;
+        font-weight: 900;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      a {
+        display: block;
+        color: #fff;
+        margin-bottom: 5px;
+      }
+
+      .title {
+        font-size: 20px;
+
+        br {
+          display: none;
+        }
+
+        @include laptop {
+          font-size: 16px;
+
+          br {
+            display: block;
+          }
+        }
+      }
+    }
+
+
+    @include laptop {
+      .sl-column {
+        width: 24%;
+      }
+
+      .big-boy {
+        width: 28%;
+      }
+    }
+
+    @include desktop {
+      .sl-column {
+        width: 25%;
+      }
+
+      .big-boy {
+        width: 25%;
+      }
+    }
+  }
+}
+
+.copyright {
+  background-color: #191919;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+
+  .sl-container {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
