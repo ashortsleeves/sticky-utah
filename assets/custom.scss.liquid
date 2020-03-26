@@ -212,6 +212,14 @@ header.custom-header {
 //=================== Styles ====================
 //===============================================
 
+.main-content {
+  padding-bottom: 30px;
+
+  @include laptop {
+    padding-bottom: 55px;
+  }
+}
+
 .tab-section {
   padding: 0;
 }
@@ -351,11 +359,37 @@ header.custom-header {
   width: 100%;
 }
 
-#shopify-section-featured-collections {
-  padding-bottom: 30px;
+// #shopify-section-featured-collections {
+//   padding-bottom: 30px;
+//
+//   @include laptop {
+//     padding-bottom: 60px;
+//   }
+// }
 
-  @include laptop {
-    padding-bottom: 60px;
+//===============================================
+//=========== Interior Product Pages ============
+//===============================================
+
+h1.product-single__title {
+  font-weight: 600;
+}
+
+.product-form__item {
+  flex-basis: 100% !important;
+
+  button.btn--secondary-accent,
+  .shopify-payment-button button {
+    font-weight: 600;
+  }
+
+  button.btn--secondary-accent {
+    border: solid 1px $color-primary;
+    color: $color-primary;
+  }
+
+  .shopify-payment-button button {
+    background-color: $color-primary;
   }
 }
 
