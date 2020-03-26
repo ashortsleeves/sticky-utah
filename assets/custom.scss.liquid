@@ -371,6 +371,18 @@ header.custom-header {
 //=========== Interior Product Pages ============
 //===============================================
 
+.btn--secondary {
+  border: solid 1px $color-primary!important;
+  color: $color-primary!important;
+  font-weight: 600;
+
+  &:hover,
+  &:focus {
+    border: solid 1px lighten($color-primary, 10%)!important;
+    color: lighten($color-primary, 10%)!important;
+  }
+}
+
 h1.product-single__title {
   font-weight: 600;
 }
@@ -386,10 +398,21 @@ h1.product-single__title {
   button.btn--secondary-accent {
     border: solid 1px $color-primary;
     color: $color-primary;
+
+    &:hover,
+    &:focus {
+      border: solid 1px lighten($color-primary, 10%);
+      color: lighten($color-primary, 10%);
+    }
   }
 
   .shopify-payment-button button {
     background-color: $color-primary;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($color-primary, 10%) !important;
+    }
   }
 }
 
