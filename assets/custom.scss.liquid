@@ -2,9 +2,11 @@
 //================== Variables ==================
 //===============================================
 
-$color-primary:   #5c5eaa;
-$color-secondary: #54AB71;
-$color-grey:      #cac9c9;
+$color-primary:     #5c5eaa;
+$color-secondary:   #54AB71;
+$color-grey:        #cac9c9;
+$header-color:      #fff;
+$header-text-color: #333;
 
 //Breakpoint variables
 $width_mobile:          480px;
@@ -46,7 +48,8 @@ header.custom-header {
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: $color-grey;
+  box-shadow: 0px -14px 38px -2px rgba(0,0,0,0.55);
+  background-color: $header-color;
 
   .header-flex-row {
     display: flex;
@@ -56,6 +59,11 @@ header.custom-header {
     max-width: 1200px;
     padding: 0 15px;
     z-index: 999;
+    height: 75px;
+
+    @include laptop {
+      height: 100px;
+    }
 
     nav.custom-nav {
       display: none;
@@ -65,65 +73,15 @@ header.custom-header {
       }
     }
 
-    @include laptop {
-      height: 100px;
-    }
-
-    h1 {
-      margin-bottom: 0;
-      line-height: 0rem;
-      display: none;
-
-      @include mobile {
-        display: block;
-      }
-
-      span {
-        display: none;
-
-        @include tablet {
-          &:nth-of-type(2) {
-            display: inline;
-          }
-        }
-
-        @include laptop {
-          display: inline;
-        }
-      }
-    }
-
     .site-nav {
       margin: 0;
-    }
-
-    a.site-header__logo-link {
-      text-transform: uppercase;
-      font-size: 24px;
-      font-weight: bold;
-      text-align: left;
-      // color: #fff;
-      // transition: 0.3s;
-      //
-      // &:hover,
-      // &:focus {
-      //   color:$color-secondary;
-      // }
-    }
-
-    h1,
-    .nav-wrap {
-      width: calc(50% - 44px);
-
-      @include laptop {
-      width: calc(50% - 61px);
-      }
     }
 
     .nav-wrap {
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      z-index: 999;
 
       li,
       button.site-nav__link span {
@@ -173,38 +131,94 @@ header.custom-header {
       }
     }
 
-    .img-wrap {
-      width: 68px;
-      height: 50px;
-      z-index: 999;
+    .logo-wrap {
+      margin-bottom: -52px;
       position: relative;
+      z-index: 999;
+      margin-top: -28px;
 
-      @include tablet {
-        width: 88px;
-        height: 70px;
+      @include laptop {
+        margin-bottom: -35px;
+        margin-top: -28px;
+        padding-bottom: 5px;
+        margin-top: 0;
+      }
+
+      img.logo {
+        width: 60px;
+        margin-right: 5px;
+
+        @include laptop {
+          width: 85px;
+        }
+      }
+
+      &::before {
+        z-index: -2;
+        display: block;
+        content: " ";
+        position: absolute;
+        // right: -10px;
+        right: -30px;
+        bottom: 0;
+        width: 100vw;
+        height: calc(100% + 50px);
+        background-color: $header-color;
+        transform: skewX(-15deg);
+        box-shadow: 0px -14px 38px -2px rgba(0,0,0,0.55);
+      }
+
+      &::after {
+        z-index: -1;
+        display: block;
+        content: " ";
+        position: absolute;
+        bottom: 17px;
+        left: calc(100% - 10px);
+        height: 110px;
+        width: 120px;
+        background-color: $header-color;
+
+        @include laptop {
+          bottom: 29px;
+        }
+      }
+    }
+
+    h1 {
+      display: inline-block;
+      vertical-align: top;
+      padding-left: 10px;
+      margin: 0;
+      margin-right: auto;
+      z-index: 999;
+      height: 42px;
+
+      @include mobile {
+        padding-left: 30px;
+      }
+
+      a.site-header__logo-link {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: left;
+        color: $header-text-color;
+
+        span {
+          display: none;
+
+          @include laptop {
+            display: inline;
+          }
+        }
       }
 
       @include laptop {
-        width: 120px;
-      }
+        // width: 150px;
 
-      img {
-        position: absolute;
-        max-width: none;
-        height: auto;
-        width: 50px;
-        left: calc(50% - 25px);
-        top: 2px;
-
-        @include tablet {
-          width: 80px;
-          left: calc(50% - 40px);
-        }
-
-        @include laptop {
-          width: 100px;
-          left: calc(50% - 50px);
-          top: -10px;
+        a.site-header__logo-link {
+          font-size: 24px;
         }
       }
     }
@@ -218,9 +232,11 @@ header.custom-header {
 
 .main-content {
   padding-bottom: 30px;
+  padding-top: 90px;
 
   @include laptop {
     padding-bottom: 55px;
+    padding-top: 120px;
   }
 }
 

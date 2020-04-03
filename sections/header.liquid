@@ -6,10 +6,12 @@
 <div data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
   <header class="custom-header">
     <div class="header-flex-row">
-      <h1><a class="site-header__logo-link" href="{{ routes.root_url }}"><span>Official </span>Sticky Utah<span> Store</span></a></h1>
-      <div class="img-wrap">
+      <div class="logo-wrap">
         <img class="logo" src="{{'sticky-logo-new.png' | asset_img_url: '450x450'}}" />
       </div>
+
+      <h1><a class="site-header__logo-link" href="{{ routes.root_url }}"><span>Official </span>Sticky Utah<span> Store</span></a></h1>
+
       <div class="nav-wrap">
         <nav role="navigation" class="custom-nav">
           {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav' %}
