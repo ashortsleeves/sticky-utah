@@ -2,8 +2,9 @@
 //================== Variables ==================
 //===============================================
 
-$color-primary:   #59367b;
-$color-secondary: #80c342;
+$color-primary:   #5c5eaa;
+$color-secondary: #54AB71;
+$color-grey:      #cac9c9;
 
 //Breakpoint variables
 $width_mobile:          480px;
@@ -45,6 +46,7 @@ header.custom-header {
   position: relative;
   display: flex;
   justify-content: center;
+  background-color: $color-grey;
 
   .header-flex-row {
     display: flex;
@@ -54,7 +56,6 @@ header.custom-header {
     max-width: 1200px;
     padding: 0 15px;
     z-index: 999;
-    background-color: #fff;
 
     nav.custom-nav {
       display: none;
@@ -101,6 +102,13 @@ header.custom-header {
       font-size: 24px;
       font-weight: bold;
       text-align: left;
+      // color: #fff;
+      // transition: 0.3s;
+      //
+      // &:hover,
+      // &:focus {
+      //   color:$color-secondary;
+      // }
     }
 
     h1,
@@ -184,23 +192,19 @@ header.custom-header {
         position: absolute;
         max-width: none;
         height: auto;
-        width: 100px;
-        left: -12px;
+        width: 50px;
+        left: calc(50% - 25px);
         top: 2px;
 
-        @include mobile {
-          left: -23px;
-        }
-
         @include tablet {
-          width: 130px;
-          left: -30px;
+          width: 80px;
+          left: calc(50% - 40px);
         }
 
         @include laptop {
-          width: 170px;
-          left: -36px;
-          top: inherit;
+          width: 100px;
+          left: calc(50% - 50px);
+          top: -10px;
         }
       }
     }
