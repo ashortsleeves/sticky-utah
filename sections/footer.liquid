@@ -1,7 +1,7 @@
 <footer>
   <div class="sl-container">
     <div class="sl-column">
-      <a class="bold title" href="{{ routes.root_url }}">Official Sticky <br />Utah Store</a>
+      <a class="bold title" href="{{ routes.root_url }}">Sticky Utah <br />Official Store</a>
 
     </div>
     <div class="sl-column">
@@ -14,15 +14,15 @@
     </div>
     <div class="sl-column big-boy">
       <span class="bold">Contact</span>
-      <a href="mailto:info@huntingrounds.com"><i class="fa fa-envelope" aria-hidden="true"></i>  info@huntingrounds.com</a>
+      <a href="mailto:stickyutah@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>  stickyutah@gmail.com</a>
     </div>
     <div class="sl-column">
-      <span class="bold">LEGAL</span>
+      <span class="bold">Policies</span>
       <ul>
-        <li><a href="#">Shipping</a></li>
-        <li><a href="#">Return Policy</a></li>
-        <li><a href="#">Terms and Conditions</a></li>
-        <li><a href="#">Privacy</a></li>
+        <li><a href="/pages/policies/#returns">Returns</a></li>
+        <li><a href="/pages/policies/#privacy">Privacy Policy</a></li>
+        <li><a href="/pages/policies/#tos">Terms of Service</a></li>
+
       </ul>
     </div>
   </div>
@@ -30,10 +30,10 @@
 <div class="copyright">
   <div class="sl-container">
     <div>
-      Web Design & Development © 2020 Terraprod
+      Web Design & Development © {{ 'now' | date: "%Y" }} Terraprod
     </div>
     <div>
-      Website Content © 2020 Sticky Utah
+      Website Content © {{ 'now' | date: "%Y" }} Sticky Utah
     </div>
   </div>
 </div>

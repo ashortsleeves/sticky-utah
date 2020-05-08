@@ -53,8 +53,8 @@
       "header": {
         "type": "header",
         "settings": {
-          "align_logo": "left",
-          "logo": "",
+          "align_logo": "center",
+          "logo": "shopify:\/\/shop_images\/unknown_2.png",
           "logo_max_width": 100,
           "main_linklist": "main-menu",
           "message": false,
@@ -69,7 +69,7 @@
         "type": "hero",
         "settings": {
           "image": "shopify:\/\/shop_images\/BrowserPreview_tmp.jpg",
-          "alignment": "center",
+          "alignment": "bottom",
           "hero_layout": "full_width",
           "hero_size": "medium",
           "text_size": "large",
@@ -82,12 +82,12 @@
       "featured-collections": {
         "type": "collection",
         "settings": {
-          "title": "",
-          "collection": "frontpage",
-          "grid": 4,
-          "rows": 3,
+          "title": "Featured Accessories",
+          "collection": "accessories",
+          "grid": 3,
+          "rows": 2,
           "show_vendor": false,
-          "show_view_all": false
+          "show_view_all": true
         }
       },
       "footer": {
@@ -129,6 +129,7 @@
       },
       "1583165497856": {
         "type": "collection-tabs",
+        "disabled": true,
         "blocks": {
           "1583165497856-0": {
             "type": "featured_collection",
@@ -158,12 +159,108 @@
           "title": "Collection tabs",
           "grid": 3
         }
+      },
+      "1588792265748": {
+        "type": "feature-columns",
+        "blocks": {
+          "1588792265748-0": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/done2_e9f614b4-4e1a-4060-89ca-d4633db871fa.png",
+              "title": "Read the Rules",
+              "text": "<p>Hunting Grounds 1 and 2 are&nbsp;Survival servers on The Isle. We have a standard set of rules for all players to comply to, and a strike system for breaches. Read all about them here!&nbsp;<\/p>",
+              "button_label": "Read the Rules",
+              "button_link": "shopify:\/\/pages\/hunting-grounds"
+            }
+          },
+          "1588792265748-1": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/rockyRaptorSceneshadingcompetition.png",
+              "title": "Join the Discord",
+              "text": "<p><\/p>\n<p><\/p>\n<p><\/p>\n<p>Join the Hunting Grounds Discord to see our rules, interact with players, find friends to play with, and so much more! We have awesome events, contests, and the best community in the game!&nbsp;<\/p>",
+              "button_label": "Join the Discord",
+              "button_link": "http:\/\/www.discord.gg\/HG"
+            }
+          },
+          "1588792265748-2": {
+            "type": "text_block",
+            "settings": {
+              "enable_image": true,
+              "image": "shopify:\/\/shop_images\/Dino_token_08234458-cd3a-4402-ab31-ec2e14292fd5.png",
+              "title": "Get Dino Tokens",
+              "text": "<p>Get Tokens to grow your in-game dinos to adulthood! Don't run risks of dying as a juvie or sub, don't spend hours of time waiting to fight; just jump right into combat with your dino of choice!<\/p>",
+              "button_label": "Get Dino Tokens",
+              "button_link": "shopify:\/\/collections\/tokens"
+            }
+          }
+        },
+        "block_order": [
+          "1588792265748-0",
+          "1588792265748-1",
+          "1588792265748-2"
+        ],
+        "settings": {
+          "title": "Hunting Grounds Server Info",
+          "align_text": "left"
+        }
+      },
+      "1588794947027": {
+        "type": "hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/IMG-0137.png",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "x-large",
+          "text_size": "medium",
+          "title": "Our Artists",
+          "text": "<p>Being some of the best dinosaur artists we've ever seen, we want to show our appreciation to each and every one of you! You're all amazing and do amazing work, and Sticky Utah, as well as the full Hunting Grounds staff team and Community, are so grateful for the effort you've put in to competitions and contests and allowing us to use your art!&nbsp;<\/p>\n<p>From all of us here in the Hunting Grounds, Thank You!<\/p>",
+          "button_label": "Artist Acknowledgements",
+          "button_link": "shopify:\/\/pages\/artist-acknowledgments"
+        }
+      },
+      "1588799195806": {
+        "type": "collection-list",
+        "blocks": {
+          "1588799195806-0": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "mens"
+            }
+          },
+          "1588799195806-1": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "womens"
+            }
+          },
+          "1588799195806-2": {
+            "type": "featured_collection",
+            "settings": {
+              "collection": "frontpage"
+            }
+          }
+        },
+        "block_order": [
+          "1588799195806-0",
+          "1588799195806-1",
+          "1588799195806-2"
+        ],
+        "settings": {
+          "title": "Shop Sticky Utah and Hungting Grounds",
+          "grid": 3
+        }
       }
     },
     "content_for_index": [
       "hero",
+      "1588792265748",
+      "1588799195806",
       "1583165497856",
-      "featured-collections"
+      "featured-collections",
+      "1588794947027"
     ]
   },
   "presets": {
