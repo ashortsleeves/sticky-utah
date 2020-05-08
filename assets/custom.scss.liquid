@@ -35,11 +35,11 @@ $width_desktop:         1200px;
 
 .js-menu--is-open {
   display: block;
-  transform: translateY(calc(0% + 50px)) !important;
+  transform: translateY(calc(0% + 76px)) !important;
 
   ul {
     box-shadow: inset 0px 8px 8px -10px rgba(0,0,0,0.5);
-    // padding-top: 10px;
+    padding-top: 15px;
   }
 }
 
@@ -52,6 +52,8 @@ header.custom-header {
   background-color: $header-color;
 
   .header-flex-row {
+    position: relative;
+    background-color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -197,6 +199,10 @@ header.custom-header {
 
       @include mobile {
         padding-left: 30px;
+      }
+
+      @include tablet {
+        width: 100px;
       }
 
       @include laptop {
