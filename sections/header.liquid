@@ -1,8 +1,4 @@
-
-
-
 {% include 'search-drawer' %}
-
 <div data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
   <header class="custom-header">
     <div class="header-flex-row">
@@ -152,7 +148,19 @@
 
 
 
-
+  {% if section.settings.message %}
+    <div class="notification-bar">
+      {% if section.settings.message %}
+        {% if section.settings.message_link != blank %}
+          <a href="{{ section.settings.message_link }}" class="notification-bar__message">
+            {{ section.settings.message_text | escape }}
+          </a>
+        {% else %}
+          <span class="notification-bar__message">{{ section.settings.message_text | escape }}</span>
+        {% endif %}
+      {% endif %}
+    </div>
+  {% endif %}
 </div>
 
 
